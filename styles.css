@@ -1,0 +1,141 @@
+body {
+    font-family: Arial;
+    background-color: #ffffff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.login-container {
+    width: 580px;
+    position: relative;
+    height:  600px;
+    margin: 0 auto;
+    margin-top: 155px;
+    padding: 20px;
+    background-color: #FAF8F5;
+    border-radius: 25px;
+    flex-direction: column;
+    align-items: center; /* Выравнивание по центру по горизонтали */
+}
+
+h2 {
+    margin-bottom: 60px;
+    font-size: 30px;
+}
+
+.form-group {
+    margin-bottom: 60px;
+}
+
+label {
+    position: absolute;
+    padding: 0 0 0 25px;
+    font-size: 15px;
+    text-align: left;
+}
+label[for=mail] {
+    top: 110px;
+    left: 20px;
+}
+label[for=password] {
+    top: 230px;
+    left: 20px;
+}
+input[type="text"],
+input[type="password"] {
+    height: 56px;
+    width: 100%;
+    max-width: calc(100% - 50px);
+    padding: 0 25px;
+    border: 1px solid #7800FF;
+    border-radius: 50px;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    background-color: #7800FF;
+    height: 56px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.forgetpswrd {
+    position: absolute;
+    top: 325px;
+    left: 470px;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.createacc {
+    color: #000000;
+    font-weight: bold;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.googleoauth {
+    position: relative;
+    font-size: 15px;
+    background-color: #fff;
+    height: 56px;
+    width: 220px;
+    color: #000000;
+    border: 1px solid #7800FF;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 0 0 0 30px;
+    margin-bottom: 30px;
+}
+.googleoauth::before {
+    content: ''; /* Обязательно для отображения псевдоэлемента */
+    background-image: url('google_logo.png'); 
+    background-size: 24px;
+    background-repeat: no-repeat;
+    background-position: 15px center; /* Расположение изображения по горизонтали */
+    position: absolute;
+    left: 10px;
+    top: 0;
+    height: 100%;
+    width: 40px;
+}
+
+.error-message {
+    position: absolute;
+    color: red;
+    font-size: 15px;
+    display: none;
+}
+
+.error-message[id="mail-error"]{
+    top: 160px;
+    left: 45px;
+}
+
+.error-message[id="password-error"]{
+    top: 277px;
+    left: 45px;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 85px;
+    padding: 0 0 0 0;
+    background-color: #7800FF;
+    align-items: center;
+}
+
+.logo img {
+    position: absolute;
+    left: 48%;
+    top: 15px;
+    max-width: 64px;
+    max-height: 64px;
+}
