@@ -1,18 +1,18 @@
 from django.db import models
-from django.utils.timezone import now
+from django.utils import timezone
 from user_api.models import CustomUser
 
 
 class Category(models.Model):
     title = models.CharField(max_length=255)
-    created_at = models.DateTimeField(default=now())
+    created_at = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.title
 
 
 class Comment(models.Model):
-    created_at = models.DateTimeField(default=now())
+    created_at = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=1024)
     grade = models.IntegerField()
 
@@ -22,7 +22,7 @@ class Comment(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
-    created_at = models.DateTimeField(default=now())
+    created_at = models.DateTimeField(default=timezone.now)
     price = models.FloatField()
     is_favorite = models.BooleanField(default=False)
     reviews_qty = models.IntegerField(default=0)

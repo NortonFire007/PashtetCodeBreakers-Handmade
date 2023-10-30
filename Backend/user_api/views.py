@@ -14,12 +14,17 @@ def reg_view(request):
     password = request.data.get('password')
     first_name = request.data.get('first_name')
     last_name = request.data.get('last_name')
-    if not any([email, password, last_name, first_name]):
-        return Response({'error': 'Please provide all required fields: email, password, first_name, last_name.'},
-                        status=status.HTTP_400_BAD_REQUEST)
-    user, created = CustomUser.objects.get_or_create(email=email, username=email.split('@')[0], first_name=first_name,
-                                                     last_name=last_name, city=request.data.get('city', 'Київ'),
-                                                     phone_number=request.data.get('phone_number', ''))
+    phone_number = request.data.get('phone_number')
+    if not any([email, password, last_name, first_name, phone_number]):
+        return Response(
+            {'error': 'Please provide all required fields: email, password, first_name, last_name, phone_number'},
+            status=status.HTTP_400_BAD_REQUEST)
+    user, created = CustomUser.objects.get_or_create(email=email,
+                                                     first_name=first_name,
+                                                     last_name=last_name,
+                                                     city=request.data.get('city', 'Київ'),
+                                                     phone_number=phone_number,
+                                                     username=email)
     if created:
         user.set_password(password)
         user.save()

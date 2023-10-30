@@ -17,9 +17,9 @@ class ProductApiList(generics.ListCreateAPIView):
 
     def get_queryset(self):
         queryset = Product.objects.all()
-        name = self.request.query_params.get('name')
+        name = self.request.query_params.get('title')
         if name:
-            queryset = queryset.filter(name__iexact=name)
+            queryset = queryset.filter(title__icontains=name)
         return queryset
 
 
