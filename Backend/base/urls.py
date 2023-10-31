@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from rest_framework_simplejwt.views import TokenVerifyView, TokenObtainPairView, TokenRefreshView
-from user_api.views import reg_view, logout_view
+from rest_framework_simplejwt.views import TokenVerifyView, TokenRefreshView
+from user_api.views import reg_view, logout_view, CustomTokenObtainPairView
 from shop.views import ProductApiList, ProductApiUpdate, ProductApiDestroy
 
 urlpatterns = [
@@ -26,8 +26,8 @@ urlpatterns = [
     path('api/v1/product/<int:pk>/', ProductApiUpdate.as_view()),
     path('api/v1/product_delete/<int:pk>/', ProductApiDestroy.as_view()),
     path('api/v1/auth/reg/', reg_view),
+    path('api/v1/auth/log/', CustomTokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/auth/logout/', logout_view),
-    path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/v1/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
     path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
 ]
