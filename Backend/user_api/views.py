@@ -31,8 +31,7 @@ def reg_view(request):
                                                      first_name=first_name,
                                                      last_name=last_name,
                                                      city=request.data.get('city', 'Київ'),
-                                                     phone_number=phone_number,
-                                                     username=email)
+                                                     phone_number=phone_number)
     if created:
         user.set_password(password)
         user.save()

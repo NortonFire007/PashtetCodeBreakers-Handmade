@@ -13,7 +13,7 @@ class Category(models.Model):
 
 class Comment(models.Model):
     created_at = models.DateTimeField(default=timezone.now)
-    title = models.CharField(max_length=1024)
+    title = models.TextField(max_length=1024)
     grade = models.IntegerField()
 
     def __str__(self):
@@ -33,3 +33,8 @@ class Product(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ProductImage(models.Model):
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
+    image = models.ImageField(upload_to='product_images/')
