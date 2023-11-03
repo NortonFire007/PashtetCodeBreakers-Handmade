@@ -10,7 +10,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="Pastet.png" alt="PASHTET DOBRO">
+                <img src="img/Pastet.png" alt="PASHTET DOBRO">
             </a>
         </div>
     </header>
@@ -29,11 +29,12 @@
                         event.preventDefault(); // Предотвращаем отправку формы
                 
                         // Если поле для почты пустое, добавляем красную рамку
-                        if (mailInput.value.trim() === "") {
+                        if (mailInput.value.trim() === "" || !mailInput.value.includes("@")) {
                             mailInput.style.borderColor = "red";
-                            mailError.textContent = "Обов'язкове поле";
+                            mailError.textContent = "Введіть існуючу адресу";
                             mailError.style.display = "block";
                             event.preventDefault();
+                            mailInput.value = "";
                         } else {
                             mailInput.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено
                             mailError.textContent = ""; // Очищаем сообщение об ошибке
@@ -46,6 +47,7 @@
                             passwordError.textContent = "Пароль повинен складатися мінімум з 8 символів";
                             passwordError.style.display = "block";
                             event.preventDefault(); // Предотвращаем отправку формы
+                            passwordInput.value = "";
                         }else {
                             passwordInput.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено и соответствует минимальной длине
                             passwordError.textContent = ""; // Очищаем сообщение об ошибке
@@ -58,19 +60,53 @@
                         mailInput.addEventListener('focus', function(){
                         mailError.textContent = ""; // Очищаем сообщение об ошибке
                         });
+
+                        // Найти поля ввода и сообщения об ошибках
+                        var mailInput = document.getElementById('mail');
+                        var passwordInput = document.getElementById('password');
+                        var mailError = document.getElementById('mail-error');
+                        var passwordError = document.getElementById('password-error');
+
+                        // Добавьте обработчик события `mouseover` для поля ввода почты
+                        mailInput.addEventListener('mouseover', function() {
+                            if (mailInput.style.borderColor === 'red') {
+                                mailInput.style.borderColor = '';
+                                mailError.textContent = '';
+                            }
+                        });
+
+                        // Добавьте обработчик события `mouseover` для поля ввода пароля
+                        passwordInput.addEventListener('mouseover', function() {
+                            if (passwordInput.style.borderColor === 'red') {
+                                passwordInput.style.borderColor = '';
+                                passwordError.textContent = '';
+                            }
+                        });
                     }
                 });
                 </script>
+                
             <div class="form-group">
                 <label for="mail">Введіть пошту</label>
                 <span id="mail-error" class="error-message"></span>
                 <input type="text" id="mail" name="mail">
             </div>
             <div class="form-group">
-                <label for="password">Введіть пароль</label>
+                <label for="password">Пароль</label>
                 <span id="password-error" class="error-message"></span>
                 <input type="password" id="password" name="password">
                 <a class="forgetpswrd" href="https://www.example.com/otherpage.html">Забули пароль?</a>
+                <button id="show-password" type="button">&#128065;</button>
+                <script>
+                    document.getElementById('show-password').addEventListener('click', function() {
+                        var passwordInput = document.getElementById('password');
+                        if (passwordInput.type === "password") {
+                            passwordInput.type = "text";
+                        } else {
+                            passwordInput.type = "password";
+                        }
+                    });
+                </script>
             </div>
             <div class="form-group">
                 <input type="submit" value="Увійти">
