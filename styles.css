@@ -95,7 +95,7 @@ input[type="submit"] {
 }
 .googleoauth::before {
     content: ''; /* Обязательно для отображения псевдоэлемента */
-    background-image: url('google_logo.png'); 
+    background-image: url('img/google_logo.png'); 
     background-size: 24px;
     background-repeat: no-repeat;
     background-position: 15px center; /* Расположение изображения по горизонтали */
@@ -138,4 +138,20 @@ header {
     top: 15px;
     max-width: 64px;
     max-height: 64px;
+}
+button[id="show-password"] {
+
+    position: relative;
+    left: 260px;
+    bottom: 39px;
+    background-color: #fff;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    cursor: pointer;
+    height: 21px;
+    width: 21px;
+    max-width: 21px;
+    max-height: 21px;
+    font-size: 15px;
+    padding: 0 0 0 1px;
 }
