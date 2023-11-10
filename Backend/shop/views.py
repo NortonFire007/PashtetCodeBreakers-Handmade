@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
-from rest_framework.views import APIView
-from rest_framework.response import Response
-from rest_framework.decorators import action
-from rest_framework.viewsets import mixins, GenericViewSet
 from .models import Product, Category
 from .serializers import ProductSerializer
 from .permissions import IsAdminOrReadOnly, IsOwnerOrReadOnly
+
+
+def index(request):
+    products = Product.objects.all().order_by('-created_at')[:4]
+    return render(request, 'shop/index.html', {'products': products})
+
+
+def add_product(request):
+    return render(request, 'shop/addproduct.html')
 
 
 class ProductApiList(generics.ListCreateAPIView):

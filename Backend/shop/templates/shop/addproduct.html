@@ -1,0 +1,222 @@
+{% load static %}
+
+<!DOCKTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/addproductstyle.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додати товар</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="{% static 'img/logo.svg' %}" alt="PASHTET DOBRO">
+        </a>
+    </div>
+    <div class="search">
+        <input type="text" placeholder="Поиск по сайту">
+    </div>
+    <div class="icons">
+        <a href="favorite.html">
+            <img src="{% static 'img/Heart.png' %}" alt="Избранное">
+        </a>
+        <a href="profile.html">
+            <img src="{% static 'img/People.png' %}" alt="Профиль">
+        </a>
+    </div>
+</header>
+<h2>Створення товару</h2>
+<form id="productForm" action="{% url 'product-create' %}" method="POST">
+    <div class="form-group">
+        <input type="text" id="title" name="title">
+        <label for="title" id="labelForTitle">Назва товару</label>
+    </div>
+    <div class="form-group">
+        <textarea type="text" id="description" name="description"></textarea>
+        <label for="description" id="labelForDescription">Опис товару</label>
+    </div>
+    <div class="photo-upload-container">
+        <input type="file" id="image" accept="image/*" name="image">
+        <input type="file" id="photoUpload2" accept="image/*" name="photoUpload2">
+        <input type="file" id="photoUpload3" accept="image/*" name="photoUpload3">
+        <input type="file" id="photoUpload4" accept="image/*" name="photoUpload4">
+        <input type="file" id="photoUpload5" accept="image/*" name="photoUpload5">
+        <label for="image" id="labelForUP">Фото</label>
+    </div>tttt
+    <div class="form-group">
+        <select id="category" name="category">
+            <option value="" disabled selected></option>
+            <option value="option1">Прикраси та біжутерія</option>
+            <option value="option2">Одяг та аксесуари</option>
+            <option value="option3">Вироби зі шкіри</option>
+            <option value="option4">Кераміка та фарфор</option>
+            <option value="option5">Мистецтво та малюнки</option>
+            <option value="option6">Вироби із текстилю</option>
+            <option value="option7">Декор та предмети інтер'єру</option>
+            <option value="option8">Іграшки</option>
+            <option value="option9">Косметика та мило</option>
+            <option value="option10">Хенд мейд подарунки</option>
+        </select>
+        <input type="text" id="price" name="price">
+        <label for="category" id="labelForCategory">Категорія товару</label>
+        <label for="price" id="labelForPrice">Ціна</label>
+    </div>
+    <div>
+        <span class="span1">Телефон для зв'язку</span>
+        <span class="span2">Місцезнаходження</span>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Отримайте посилання на радіокнопки та поля вводу
+            const defaultNumRadio = document.getElementById("defaultNum");
+            const differentNumRadio = document.getElementById("differentNum");
+            const differentNumField = document.getElementById("differentNumField");
+
+            const defaultLocationRadio = document.getElementById("defaultLocation");
+            const differentLocationRadio = document.getElementById("differentlocation");
+            const differentLocationField = document.getElementById("differentlocationField");
+
+            // Додайте обробник події для радіокнопок номера
+            defaultNumRadio.addEventListener("change", function () {
+                differentNumField.classList.add("hidden");
+            });
+
+            differentNumRadio.addEventListener("change", function () {
+                differentNumField.classList.remove("hidden");
+            });
+
+            // Додайте обробник події для радіокнопок місцезнаходження
+            defaultLocationRadio.addEventListener("change", function () {
+                differentLocationField.classList.add("hidden");
+            });
+
+            differentLocationRadio.addEventListener("change", function () {
+                differentLocationField.classList.remove("hidden");
+            });
+        });
+    </script>
+    <div>
+        <input type="radio" id="defaultNum" name="radiogroup1">
+        <label for="defaultNum" id="labelForDefaultNum">за замовчуванням</label>
+        <input type="radio" id="defaultLocation" name="radiogroup2">
+        <label for="defaultNum" id="labelForDefaultNum">за замовчуванням</label>
+    </div>
+    <div>
+        <input type="radio" id="differentNum" name="radiogroup1">
+        <label for="differentNum" id="labelFordifferentNum">інший</label>
+        <input type="text" id="differentNumField" name="differentNumField" class="hidden">
+        <input type="radio" id="differentlocation" name="radiogroup2">
+        <label for="differentNum" id="labelFordifferentlocation">інший</label>
+        <select id="differentlocationField" name="differentlocationField" class="hidden">
+            <option value="option1">Авдіївка</option>
+            <option value="option2">Бар</option>
+            <option value="option3">Вінниця</option>
+            <option value="option4">Горішні Плавні</option>
+            <option value="option5">Дніпро</option>
+            <option value="option6">Євпаторія</option>
+            <option value="option7">Житомир</option>
+            <option value="option8">Запоріжжя</option>
+            <option value="option9">Івано-Франківськ</option>
+            <option value="option10">Кам'янець-Подільський</option>
+            <option value="option11">Луцьк</option>
+            <option value="option12">Львів</option>
+            <option value="option13">Маріуполь</option>
+            <option value="option14">Нікополь</option>
+            <option value="option15">Одеса</option>
+            <option value="option16">Полтава</option>
+            <option value="option17">Рівне</option>
+            <option value="option18">Севастополь</option>
+            <option value="option19">Тернопіль</option>
+            <option value="option20">Ужгород</option>
+            <option value="option21">Фастів</option>
+            <option value="option22">Харків</option>
+            <option value="option23">Черкаси</option>
+            <option value="option24">Чернівці</option>
+            <option value="option25">Черкаси</option>
+            <option value="option26">Чернігів</option>
+            <option value="option27">Шостка</option>
+            <option value="option28">Ялта</option>
+            <option value="option29">Яремче</option>
+            <option value="option30">Ясинувата</option>
+            <option value="option31">Алушта</option>
+            <option value="option32">Біла Церква</option>
+            <option value="option33">Бровари</option>
+            <option value="option34">Вараш</option>
+            <option value="option35">Вільногірськ</option>
+            <option value="option36">Глухів</option>
+            <option value="option37">Долина</option>
+            <option value="option38">Звенигородка</option>
+            <option value="option39">Ізмаїл</option>
+            <option value="option40">Каховка</option>
+            <option value="option41">Київ</option>
+            <option value="option42">Кіровоград</option>
+            <option value="option43">Краматорськ</option>
+            <option value="option44">Лисичанськ</option>
+            <option value="option45">Макіївка</option>
+            <option value="option46">Марганець</option>
+            <option value="option47">Мар'їнка</option>
+            <option value="option48">Мелітополь</option>
+            <option value="option49">Мукачеве</option>
+            <option value="option50">Миколаїв</option>
+            <option value="option51">Новомосковськ</option>
+            <option value="option52">Павлоград</option>
+            <option value="option53">Пологи</option>
+            <option value="option54">Роздільна</option>
+            <option value="option55">Северодонецьк</option>
+            <option value="option56">Сімферополь</option>
+            <option value="option57">Слов'янськ</option>
+            <option value="option58">Суми</option>
+            <option value="option59">Тернопіль</option>
+            <option value="option60">Умань</option>
+            <option value="option61">Херсон</option>
+            <option value="option62">Хмельницький</option>
+            <option value="option63">Червоноград</option>
+            <option value="option64">Черкаси</option>
+            <option value="option65">Чернігів</option>
+            <option value="option66">Щасливе</option>
+            <option value="option67">Щолкіне</option>
+            <option value="option68">Южне</option>
+            <option value="option69">Яворів</option>
+            <option value="option70">Яготин</option>
+            <option value="option71">Алчевськ</option>
+            <option value="option72">Бахмут</option>
+            <option value="option73">Бердянськ</option>
+            <option value="option74">Бориспіль</option>
+            <option value="option75">Броди</option>
+            <option value="option76">Вишневе</option>
+            <option value="option77">Вознесенськ</option>
+            <option value="option78">Глухів</option>
+            <option value="option79">Долина</option>
+            <option value="option80">Звенигородка</option>
+            <option value="option81">Ізмаїл</option>
+            <option value="option82">Каховка</option>
+            <option value="option83">Київ</option>
+            <option value="option84">Кіровоград</option>
+            <option value="option85">Краматорськ</option>
+            <option value="option86">Лисичанськ</option>
+            <option value="option87">Макіївка</option>
+            <option value="option88">Марганець</option>
+            <option value="option89">Мар'їнка</option>
+            <option value="option90">Мелітополь</option>
+            <option value="option91">Мукачеве</option>
+            <option value="option92">Миколаїв</option>
+            <option value="option93">Новомосковськ</option>
+            <option value="option94">Павлоград</option>
+            <option value="option95">Пологи</option>
+            <option value="option96">Роздільна</option>
+            <option value="option97">Северодонецьк</option>
+            <option value="option98">Сімферополь</option>
+            <option value="option99">Слов'янськ</option>
+            <option value="option100">Суми</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" id="submit" value="Створити товар">
+    </div>
+</form>
+<footer>
+</footer>
+</body>
+</html>
