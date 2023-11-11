@@ -50,7 +50,7 @@
 		<!-- If we need pagination -->
 		<div class="swiper-pagination"></div>
 
-		<!-- If we need navigation buttons 
+		<!-- If we need navigation buttons
 		<div class="swiper-button-prev"></div>
 		<div class="swiper-button-next"></div>
 
@@ -134,29 +134,31 @@
 			<div class="imgproductitem">
 				<div class="block">
 					<div class="block__row">
-					{% for product in products %}
-					<div class="block__element block__element_1">
-						<div class="block__content">
-							<div class="product">
-								<img src="{{ product.image.crop.290x290 }}" alt="Изображение товара">
-								<div class="favorite">
-									<img src="{% static 'img/hearter.svg' %}" alt="">
+						{% for product in products %}
+							<div class="block__element block__element_1">
+								<div class="block__content">
+									<div class="product">
+										<a href="http://127.0.0.1:8000/item/{{product.id}}/">
+											<img src="{{ product.image.crop.290x290 }}" alt="Изображение товара">
+										</a>
+										<div class="favorite">
+											<img src="{% static 'img/hearter.svg' %}" alt="">
+										</div>
+										<h2>{{ product.title }}</h2>
+										<p class="price">{{ product.price }}грн</p>
+										<p class="pricezsu">
+											<img src="{% static 'img/flag.svg' %}" alt="">
+											<p class="cina">15грн</p>
+										</p>
+										<button class="buy-button">Купить</button>
+									</div>
 								</div>
-								<h2>{{ product.title }}</h2>
-								<p class="price">{{ product.price }}грн</p>
-								<p class="pricezsu">
-									<img src="{% static 'img/flag.svg' %}" alt="">
-									<p class="cina">15грн</p>
-								</p>
-								<button class="buy-button">Купить</button>
 							</div>
-						</div>
+						{% endfor %}
 					</div>
-					{% endfor %}
 				</div>
 			</div>
 		</div>
-
 		<div class="new_items">
 			<div class="textnew">
 				Для вас
@@ -167,79 +169,27 @@
 			<div class="imgproductitem">
 				<div class="block">
 					<div class="block__row">
-						<div class="block__element block__element_1">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 7.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="{% static 'img/hearter.svg' %}" alt="">
+						{% for product in products %}
+							<div class="block__element block__element_1">
+								<div class="block__content">
+									<div class="product">
+										<a href="http://127.0.0.1:8000/item/{{product.id}}/">
+											<img src="{{ product.image.crop.290x290 }}" alt="Изображение товара">
+										</a>
+										<div class="favorite">
+											<img src="{% static 'img/hearter.svg' %}" alt="">
+										</div>
+										<h2>{{ product.title }}</h2>
+										<p class="price">{{ product.price }}грн</p>
+										<p class="pricezsu">
+											<img src="{% static 'img/flag.svg' %}" alt="">
+											<p class="cina">15грн</p>
+										</p>
+										<button class="buy-button">Купить</button>
 									</div>
-									<h2 class="product__title">
-										Набір багать підставки для чашок VANZA Pattern
-									</h2>
-									<p class="price">
-										499грн
-									</p>
-									<p class="pricezsu">
-										<img class="flag" src="{% static 'img/flag.svg' %}" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
 								</div>
 							</div>
-						</div>
-						<div class="block__element block__element_2">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 8.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Сорочка Dunmore EUR 39/40</h2>
-									<p class="price">1250 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_3">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 17.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Набір рушників La Prima</h2>
-									<p class="price">790 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_4">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 18.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Годинник на стіну з дерева Home</h2>
-									<p class="price">600 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -255,79 +205,27 @@
 			<div class="imgproductitem">
 				<div class="block">
 					<div class="block__row">
-						<div class="block__element block__element_1">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 7.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
+						{% for product in products %}
+							<div class="block__element block__element_1">
+								<div class="block__content">
+									<div class="product">
+										<a href="http://127.0.0.1:8000/item/{{product.id}}/">
+											<img src="{{ product.image.crop.290x290 }}" alt="Изображение товара">
+										</a>
+										<div class="favorite">
+											<img src="{% static 'img/hearter.svg' %}" alt="">
+										</div>
+										<h2>{{ product.title }}</h2>
+										<p class="price">{{ product.price }}грн</p>
+										<p class="pricezsu">
+											<img src="{% static 'img/flag.svg' %}" alt="">
+											<p class="cina">15грн</p>
+										</p>
+										<button class="buy-button">Купить</button>
 									</div>
-									<h2 class="product__title">
-										Набір багать підставки для чашок VANZA Pattern
-									</h2>
-									<p class="price">
-										499грн
-									</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
 								</div>
 							</div>
-						</div>
-						<div class="block__element block__element_2">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 8.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Сорочка Dunmore EUR 39/40</h2>
-									<p class="price">1250 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_3">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 17.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Набір рушників La Prima</h2>
-									<p class="price">790 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_4">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 18.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Годинник на стіну з дерева Home</h2>
-									<p class="price">600 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</div>
@@ -343,79 +241,27 @@
 			<div class="imgproductitem">
 				<div class="block">
 					<div class="block__row">
-						<div class="block__element block__element_1">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 7.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
+						{% for product in products %}
+							<div class="block__element block__element_1">
+								<div class="block__content">
+									<div class="product">
+										<a href="http://127.0.0.1:8000/item/{{product.id}}/">
+											<img src="{{ product.image.crop.290x290 }}" alt="Изображение товара">
+										</a>
+										<div class="favorite">
+											<img src="{% static 'img/hearter.svg' %}" alt="">
+										</div>
+										<h2>{{ product.title }}</h2>
+										<p class="price">{{ product.price }}грн</p>
+										<p class="pricezsu">
+											<img src="{% static 'img/flag.svg' %}" alt="">
+											<p class="cina">15грн</p>
+										</p>
+										<button class="buy-button">Купить</button>
 									</div>
-									<h2 class="product__title">
-										Набір багать підставки для чашок VANZA Pattern
-									</h2>
-									<p class="price">
-										499грн
-									</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
 								</div>
 							</div>
-						</div>
-						<div class="block__element block__element_2">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 8.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Сорочка Dunmore EUR 39/40</h2>
-									<p class="price">1250 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_3">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 17.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Набір рушників La Prima</h2>
-									<p class="price">790 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-						<div class="block__element block__element_4">
-							<div class="block__content">
-								<div class="product">
-									<img class="product__image" src="img/image 18.png" alt="Изображение товара">
-									<div class="favorite">
-										<img class="favorite__image" src="img/hearter.svg" alt="">
-									</div>
-									<h2 class="product__title">Годинник на стіну з дерева Home</h2>
-									<p class="price">600 грн</p>
-									<p class="pricezsu">
-										<img class="flag" src="img/flag.svg" alt="">
-									<p class="cina">15грн</p>
-									</p>
-									<button class="buy-button">Купити</button>
-								</div>
-							</div>
-						</div>
-
+						{% endfor %}
 					</div>
 				</div>
 			</div>

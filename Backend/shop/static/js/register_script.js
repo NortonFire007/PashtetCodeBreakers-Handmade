@@ -100,10 +100,10 @@ function togglePasswordVisibility(pasw) {
 
     if (passwordInput.type === "password") {
         passwordInput.type = "text";
-        toggleButton.innerHTML = '<img src="img/open-eye.svg" alt="">'; // Изменение HTML содержимого кнопки для показа пароля
+        toggleButton.innerHTML = '<img src="static/img/open-eye.svg" alt="">'; // Изменение HTML содержимого кнопки для показа пароля
     } else {
         passwordInput.type = "password";
-        toggleButton.innerHTML = '<img src="img/close-eye.svg" alt="">'; // Изменение HTML содержимого кнопки для скрытия пароля
+        toggleButton.innerHTML = '<img src="static/img/close-eye.svg" alt="">'; // Изменение HTML содержимого кнопки для скрытия пароля
     }
 }
 

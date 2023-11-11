@@ -1,0 +1,284 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+	<meta class="meta" charset="UTF-8">
+	<meta class="meta" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title class="title">item</title>
+	<link class="link" rel="stylesheet" href="{% static 'css/item.css'%}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</head>
+
+<body class="page">
+	<header class="header">
+		<div class="logo">
+			<a class="logo__link" href="mainpage.html">
+				<img class="logo__image" src="{% static 'img/logo.svg' %}" alt="PASHTET DOBRO">
+			</a>
+		</div>
+		<div class="search">
+			<input class="search__input" type="text" placeholder="Пошук по сайту">
+		</div>
+		<div class="icons">
+			<a class="icons__link" href="favorite.html">
+				<img class="icons__image" src="{% static 'img/Heart.png' %}" alt="Улюблене">
+			</a>
+			<a class="icons__link" href="profile.html">
+				<img class="icons__image" src="{% static 'img/People.png' %}" alt="Профіль">
+			</a>
+		</div>
+		<a class="login-logout-button" id="login-logout-button"></a>
+	</header>
+	<div class="allitems">
+		<div class="flex_item">
+			<div class="swiper mySwiper">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" data-width="550">
+						<img src="{{product.image.url}}" alt="" width="550" height="auto">
+					</div>
+					<div class="swiper-slide">
+						<img src="{{product.image.crop.1180x1180}}" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="{{product.image.crop.1180x1180}}" alt="">
+					</div>
+				</div>
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			</div>
+			<div class="favorite">
+				<img class="favorite__image" src="{% static 'img/hearter.svg' %}" alt="">
+			</div>
+			<div class="myr">
+				<div class="description">
+					<h2 class="product__title">
+						{{product.title}}
+					</h2>
+					<div class="rating__product ">
+						<div class="rating__body">
+							<div class="rating__active"></div>
+							<div class="rating__items">
+								<input type="radio" class="rating__item" value="1" name="rating">
+								<input type="radio" class="rating__item" value="2" name="rating">
+								<input type="radio" class="rating__item" value="3" name="rating">
+								<input type="radio" class="rating__item" value="4" name="rating">
+								<input type="radio" class="rating__item" value="5" name="rating">
+							</div>
+						</div>
+						<div class="rating__value">3.5</div>
+
+					</div>
+					<p class="price">
+						{{product.price}} грн
+					</p>
+					<p class="pricezsu">
+						<img class="flag" src="{% static 'img/flag 1.svg' %}" alt="">
+					<p class="cina">15грн</p>
+					</p>
+					<button class="buy-button">Купити</button>
+					<div class="disc">
+						<div class="opis">Опис</div>
+						<div class="opis__all">
+							{{product.description}}
+						</div>
+					</div>
+				</div>
+				<div class="seller__description">
+					<div class="seller">
+						<img class="anime1" src="{{ user.profile_img.thumbnail.67x67 }}" alt="">
+						<div class="lastname">Продавець</div>
+						<div class="name">{{user.first_name}} {{user.last_name}}</div>
+						<div class="rating__seller">
+							<div class="rating__body">
+								<div class="rating__active"></div>
+								<div class="rating__items">
+									<input type="radio" class="rating__item" value="1" name="rating">
+									<input type="radio" class="rating__item" value="2" name="rating">
+									<input type="radio" class="rating__item" value="3" name="rating">
+									<input type="radio" class="rating__item" value="4" name="rating">
+									<input type="radio" class="rating__item" value="5" name="rating">
+								</div>
+							</div>
+							<div class="rating__value">4</div>
+
+						</div>
+						<button class="tellefon"><img src="{% static 'img/chat-bubble.svg' %}" alt=""></button>
+						<div class="social-buttons">
+							<button class="social-button telegram"><img src="{% static 'img/telegram-circle.svg' %}"
+									alt="Telegram"></button>
+							<button class="social-button viber"><img src="{% static 'img/viber-circle.svg' %}" alt="Viber"></button>
+							<button class="social-button whatsapp"><img src="{% static 'img/whatsapp-circle.svg' %}"
+									alt="WhatsApp"></button>
+						</div>
+					</div>
+					<div class="comentariy">
+						<div class="container">
+							<div class="post">
+								<div class="text">Дякуємо за оцінку!</div>
+								<div class="edit">РЕДАГУВАТИ</div>
+							</div>
+							<button class="closeapp">
+								<img src="{% static 'img/xmark.svg' %}" alt="">
+							</button>
+							<div class="star-widget">
+								<input type="radio" name="rate" id="rate-5">
+								<label for="rate-5" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-4">
+								<label for="rate-4" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-3">
+								<label for="rate-3" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-2">
+								<label for="rate-2" class="fas fa-star"></label>
+								<input type="radio" name="rate" id="rate-1">
+								<label for="rate-1" class="fas fa-star"></label>
+								<form action="#">
+									<header class="header_coment"></header>
+									<div class="textarea">
+										<textarea cols="30" placeholder="Опишіть своє враження.."></textarea>
+									</div>
+									<div class="btn">
+										<button type="submit">Прокоментувати</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<button class="coment_sell">Прокоментувати</button>
+				</div>
+			</div>
+		</div>
+
+		<div class="comments-container">
+			<div class="comments">
+				<div class="comments-text">Коментарі</div>
+				<div class="comments-items">
+					<div class="comments-item">
+						<div class="user-info">
+							<img class="avatar" src="{% static 'img/avatar2d.svg' %}" alt="Аватар пользователя">
+							<div class="username">Имя пользователя</div>
+							<div class="date">02.02.22</div>
+							<div class="rating__coment_under">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">2</div>
+
+							</div>
+						</div>
+						<div class="comment-text">
+							Зручно, круто, приємно
+						</div>
+					</div>
+					<div class="comments-item">
+						<div class="user-info">
+							<img class="avatar" src="{% static 'img/avatar2d.svg' %}" alt="Аватар пользователя">
+							<div class="username">Имя пользователя</div>
+							<div class="date">02.02.22</div>
+							<div class="rating__coment_under">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">2</div>
+
+							</div>
+						</div>
+						<div class="comment-text">
+							Зручно, круто, приємно
+						</div>
+					</div>
+					<div class="comments-item">
+						<div class="user-info">
+							<img class="avatar" src="{% static 'img/avatar2d.svg' %}" alt="Аватар пользователя">
+							<div class="username">Имя пользователя</div>
+							<div class="date">02.02.22</div>
+							<div class="rating__coment_under">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">2</div>
+
+							</div>
+						</div>
+						<div class="comment-text">
+							Зручно, круто, приємно
+						</div>
+					</div>
+					<div class="comments-item">
+						<div class="user-info">
+							<img class="avatar" src="{% static 'img/avatar2d.svg' %}" alt="Аватар пользователя">
+							<div class="username">Имя пользователя</div>
+							<div class="date">02.02.22</div>
+							<div class="rating__coment_under">
+								<div class="rating__body">
+									<div class="rating__active"></div>
+									<div class="rating__items">
+										<input type="radio" class="rating__item" value="1" name="rating">
+										<input type="radio" class="rating__item" value="2" name="rating">
+										<input type="radio" class="rating__item" value="3" name="rating">
+										<input type="radio" class="rating__item" value="4" name="rating">
+										<input type="radio" class="rating__item" value="5" name="rating">
+									</div>
+								</div>
+								<div class="rating__value">2</div>
+
+							</div>
+						</div>
+						<div class="comment-text">
+							Зручно, круто, приємно
+						</div>
+					</div>
+
+
+
+				</div>
+			</div>
+			<button class="show-more-btn">Показати ще</button>
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="pashtet">
+				PASHTET
+			</div>
+			<div class="info">
+				ТМ використовується на підставі ліцензії правовласника Pashtet Code Breakers
+				© 2023 Благодійний маркет-плейс «PASHTET™»
+			</div>
+			<div class="social-links">
+				<a class="social-links__link" href="#">Facebook</a>
+				<a class="social-links__link" href="#">Twitter</a>
+				<a class="social-links__link" href="#">Instagram</a>
+			</div>
+		</div>
+	</footer>
+	<script class="script" src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+	<script class="script" src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
