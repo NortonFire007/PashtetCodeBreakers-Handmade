@@ -1,0 +1,178 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: 400;
+}
+
+
+a {
+    color: black;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #FF4F13;
+    transition: color 0.3s;
+}
+
+a:active {
+    color: black;
+}
+
+.header {
+    background-color: #FF4F13;
+    display: flex;
+    align-items: center;
+    height: 85px;
+}
+
+
+
+.search {
+    display: flex;
+    flex: 0 0 60%;
+    margin-right: 2%;
+    height: 100%;
+
+    align-items: center;
+
+}
+
+.search__input {
+    width: 100%;
+    /* Занимает всю доступную ширину внутри блока search */
+    box-sizing: border-box;
+    border-radius: 20px;
+    height: 40%;
+    padding-left: 20px;
+    /* Учитывает padding и border в общей ширине элемента */
+}
+
+.search_item {
+    position: relative;
+    left: -130%;
+    cursor: pointer;
+}
+
+.logo {
+    margin-left: 5%;
+    margin-right: 10%;
+}
+
+.logo:hover {
+    background-color: #d34110;
+    border-radius: 25px;
+}
+
+.icons__link {
+
+    position: relative;
+    margin-right: 10%;
+}
+
+.icons__link:hover {
+
+    background-color: #d34110;
+    border-radius: 10px;
+}
+
+
+.icons {
+    width: 100%;
+    padding-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 2%;
+}
+
+#loginout-button {
+    cursor: pointer;
+    position: relative;
+    top: -2px;
+}
+
+#loginout-button:hover {
+    background-color: #d34110;
+    border-radius: 40%;
+}
