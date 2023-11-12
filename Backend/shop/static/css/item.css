@@ -171,31 +171,27 @@ header {
     max-height: 50%;
 }
 
-.swiper-slide_product-page{
-    text-align: center;
-    font-size: 18px;
-    background: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 546px;
-    height: 546px;
-}
-
 .swiper-slide {
     text-align: center;
     font-size: 18px;
     background: #fff;
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    align-self: center;
+
 }
 
 .swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
+    display: inline-flex;
+    max-width: 100%;
+    /* Максимальная ширина изображения будет равна ширине родительского контейнера */
+    height: auto;
     object-fit: cover;
+
+    align-items: center;
+
+
 }
 
 .favorite {
@@ -282,7 +278,7 @@ footer {
 }
 
 .swiper.mySwiper {
-    width: 50%;
+    max-width: 40%;
     height: 100%;
 
     /* Половина ширины блока flex_item */
@@ -317,7 +313,6 @@ footer {
 }
 
 .myr {
-    min-width: 50%;
     display: flex;
     align-items: end;
     flex-direction: column;
@@ -328,17 +323,13 @@ footer {
     background-color: #7800FF;
     color: #fff;
     border: none;
-    padding: 9px 32px;
+    padding: 5px 32px;
     border-radius: 25px;
     cursor: pointer;
     font-size: 1rem;
-    margin-top: 10px;
 
-    position: absolute;
 
-    top: 34%;
-    left: 71%;
-
+    position: relative;
 }
 
 
@@ -360,21 +351,32 @@ footer {
 .price {
     font-weight: bold;
     font-size: 25px;
-    margin-top: 14px;
+    margin-right: 8%;
+
+}
+
+.twoprice {
+    margin-right: 8%;
+    display: flex;
+    position: relative;
 }
 
 .pricezsu {
-    position: absolute;
-    top: 36%;
-    left: 60%;
+    position: relative;
+
 }
 
 .cina {
     font-weight: bold;
     position: absolute;
-    top: 37%;
-    left: 61%;
     font-size: 18px;
+    top: 20%;
+    left: 10%;
+}
+
+.allprices {
+    display: flex;
+    margin: 5% 0 0 0;
 }
 
 .opis {

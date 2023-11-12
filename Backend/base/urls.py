@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenVerifyView, TokenRefreshView, TokenObtainPairView
 from user_api.views import reg_view, logout_view
-from shop.views import ProductApiList, ProductApiUpdate, ProductApiDestroy, index, add_product, item
+from shop.views import ProductApiList, ProductApiUpdate, ProductApiDestroy, index, add_product, item, paginated_data
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -27,6 +27,7 @@ urlpatterns = [
     path('add_product', add_product, name='add_product'),
     path('admin/', admin.site.urls),
     path('item/<int:product_id>/', item, name='item_detail'),
+    path('api/v1/paginated-data/', paginated_data, name='paginated_data'),
     path('api/v1/product/', ProductApiList.as_view(), name='product-create'),
     path('api/v1/product/<int:pk>/', ProductApiUpdate.as_view()),
     path('api/v1/product_delete/<int:pk>/', ProductApiDestroy.as_view()),

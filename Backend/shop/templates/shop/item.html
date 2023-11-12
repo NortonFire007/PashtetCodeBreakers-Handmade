@@ -6,7 +6,7 @@
 	<meta class="meta" charset="UTF-8">
 	<meta class="meta" name="viewport" content="width=device-width, initial-scale=1.0">
 	<title class="title">item</title>
-	<link class="link" rel="stylesheet" href="{% static 'css/item.css'%}">
+	<link class="link" rel="stylesheet" href="{% static 'css/item.css' %}">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -16,7 +16,7 @@
 	<header class="header">
 		<div class="logo">
 			<a class="logo__link" href="mainpage.html">
-				<img class="logo__image" src="{% static 'img/logo.svg' %}" alt="PASHTET DOBRO">
+				<img class="logo__image" src="img/logo.svg" alt="PASHTET DOBRO">
 			</a>
 		</div>
 		<div class="search">
@@ -36,14 +36,14 @@
 		<div class="flex_item">
 			<div class="swiper mySwiper">
 				<div class="swiper-wrapper">
-					<div class="swiper-slide" data-width="550">
-						<img src="{{product.image.url}}" alt="" width="550" height="auto">
-					</div>
 					<div class="swiper-slide">
 						<img src="{{product.image.crop.1180x1180}}" alt="">
 					</div>
 					<div class="swiper-slide">
-						<img src="{{product.image.crop.1180x1180}}" alt="">
+						<img src="img/cat.png" alt="">
+					</div>
+					<div class="swiper-slide">
+						<img src="img/lol.jfif" alt="">
 					</div>
 				</div>
 				<div class="swiper-button-next"></div>
@@ -71,14 +71,18 @@
 						<div class="rating__value">3.5</div>
 
 					</div>
-					<p class="price">
-						{{product.price}} грн
-					</p>
-					<p class="pricezsu">
-						<img class="flag" src="{% static 'img/flag 1.svg' %}" alt="">
-					<p class="cina">15грн</p>
-					</p>
-					<button class="buy-button">Купити</button>
+					<div class="allprices">
+						<p class="price">
+							{{product.price}} грн
+						</p>
+						<div class="twoprice">
+							<p class="pricezsu">
+								<img class="flag" src="{% static 'img/flag 1.svg' %}" alt="">
+							<p class="cina">15грн</p>
+							</p>
+						</div>
+						<button class="buy-button">Купити</button>
+					</div>
 					<div class="disc">
 						<div class="opis">Опис</div>
 						<div class="opis__all">
@@ -88,7 +92,7 @@
 				</div>
 				<div class="seller__description">
 					<div class="seller">
-						<img class="anime1" src="{{ user.profile_img.thumbnail.67x67 }}" alt="">
+						<img class="anime1" src="{{user.profile_img.crop.55x55}}" alt="">
 						<div class="lastname">Продавець</div>
 						<div class="name">{{user.first_name}} {{user.last_name}}</div>
 						<div class="rating__seller">
@@ -157,7 +161,7 @@
 				<div class="comments-items">
 					<div class="comments-item">
 						<div class="user-info">
-							<img class="avatar" src="{% static 'img/avatar2d.svg' %}" alt="Аватар пользователя">
+							<img class="avatar" src="img/avatar2d.svg" alt="Аватар пользователя">
 							<div class="username">Имя пользователя</div>
 							<div class="date">02.02.22</div>
 							<div class="rating__coment_under">

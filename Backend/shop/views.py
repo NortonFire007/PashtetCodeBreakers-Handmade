@@ -1,3 +1,5 @@
+from django.core.paginator import Paginator
+from django.http import JsonResponse
 from django.shortcuts import render
 from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser
@@ -23,13 +25,34 @@ def item(request, product_id):
     return render(request, 'shop/item.html', {'product': product, 'user': user})
 
 
+def paginated_data(request):
+    page_size = 3
+    data_list = Product.objects.all()
+
+    paginator = Paginator(data_list, page_size)
+    page_number = request.GET['page']
+    page = paginator.get_page(page_number)
+
+    serializer = ProductSerializer(page, many=True)
+
+    data = {
+        'page_number': page.number,
+        'total_pages': paginator.num_pages,
+        'has_previous': page.has_previous(),
+        'has_next': page.has_next(),
+        'data': serializer.data
+    }
+
+    return JsonResponse(data)
+
+
 class ProductApiList(generics.ListCreateAPIView):
     queryset = Product.objects.all()
     serializer_class = ProductSerializer
     permission_classes = (IsAuthenticatedOrReadOnly,)
 
     def get_queryset(self):
-        queryset = Product.objects.all()й
+        queryset = Product.objects.all()
         name = self.request.query_params.get('title')
         if name:
             queryset = queryset.filter(title__icontains=name)
