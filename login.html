@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вхід в аккаунт</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="img/Pastet.png" alt="PASHTET DOBRO">
+            </a>
+        </div>
+    </header>
+    <div class="login-container">       
+        <h2>Вхід</h2>      
+        <form id="login-form" method="POST" action="/your-backend-endpoint">
+            <script>
+                document.getElementById('login-form').addEventListener('submit', function(event) {
+                    var mailInput = document.getElementById('mail');
+                    var passwordInput = document.getElementById('password');
+                    var passwordError = document.getElementById('password-error');
+                    var mailError = document.getElementById('mail-error');
+                    
+                    // Проверяем, заполнены ли оба поля
+                    if (mailInput.value.trim() === "" || passwordInput.value.trim() === "" || passwordInput.value.length < 8) {
+                        event.preventDefault(); // Предотвращаем отправку формы
+                
+                        // Если поле для почты пустое, добавляем красную рамку
+                        if (mailInput.value.trim() === "" || !mailInput.value.includes("@")) {
+                            mailInput.style.borderColor = "red";
+                            mailError.textContent = "Введіть існуючу адресу";
+                            mailError.style.display = "block";
+                            event.preventDefault();
+                            mailInput.value = "";
+                        } else {
+                            mailInput.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено
+                            mailError.textContent = ""; // Очищаем сообщение об ошибке
+                            mailError.style.display = "none"; // Скрываем сообщение об ошибке
+                        }
+                
+                        // Если поле для пароля пустое или короче 8 символов, добавляем красную рамку и отображаем сообщение об ошибке
+                        if (passwordInput.value.trim() === "" || passwordInput.value.length < 8) {
+                            passwordInput.style.borderColor = "red";
+                            passwordError.textContent = "Пароль повинен складатися мінімум з 8 символів";
+                            passwordError.style.display = "block";
+                            event.preventDefault(); // Предотвращаем отправку формы
+                            passwordInput.value = "";
+                        }else {
+                            passwordInput.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено и соответствует минимальной длине
+                            passwordError.textContent = ""; // Очищаем сообщение об ошибке
+                            passwordError.style.display = "none"; // Скрываем сообщение об ошибке
+                            
+                        }
+                        passwordInput.addEventListener('focus', function(){
+                        passwordError.textContent = ""; // Очищаем сообщение об ошибке
+                        });
+                        mailInput.addEventListener('focus', function(){
+                        mailError.textContent = ""; // Очищаем сообщение об ошибке
+                        });
+
+                        // Найти поля ввода и сообщения об ошибках
+                        var mailInput = document.getElementById('mail');
+                        var passwordInput = document.getElementById('password');
+                        var mailError = document.getElementById('mail-error');
+                        var passwordError = document.getElementById('password-error');
+
+                        // Добавьте обработчик события `mouseover` для поля ввода почты
+                        mailInput.addEventListener('mouseover', function() {
+                            if (mailInput.style.borderColor === 'red') {
+                                mailInput.style.borderColor = '';
+                                mailError.textContent = '';
+                            }
+                        });
+
+                        // Добавьте обработчик события `mouseover` для поля ввода пароля
+                        passwordInput.addEventListener('mouseover', function() {
+                            if (passwordInput.style.borderColor === 'red') {
+                                passwordInput.style.borderColor = '';
+                                passwordError.textContent = '';
+                            }
+                        });
+                    }
+                });
+                </script>
+                
+            <div class="form-group">
+                <label for="mail">Введіть пошту</label>
+                <span id="mail-error" class="error-message"></span>
+                <input type="text" id="mail" name="mail">
+            </div>
+            <div class="form-group">
+                <label for="password">Пароль</label>
+                <span id="password-error" class="error-message"></span>
+                <input type="password" id="password" name="password">
+                <a class="forgetpswrd" href="https://www.example.com/otherpage.html">Забули пароль?</a>
+                <button id="show-password" type="button">&#128065;</button>
+                <script>
+                    document.getElementById('show-password').addEventListener('click', function() {
+                        var passwordInput = document.getElementById('password');
+                        if (passwordInput.type === "password") {
+                            passwordInput.type = "text";
+                        } else {
+                            passwordInput.type = "password";
+                        }
+                    });
+                </script>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Увійти">
+            </div>
+        </form>
+            <button class="googleoauth" id="myButton">sign up with Google</button>
+                <script>
+                document.getElementById('myButton').addEventListener('click', function() {
+                    window.location.href = 'https://www.google.com.ua/';
+                });
+                </script>
+                <p>Немає облікового запису? <a class="createacc" href="https://www.example.com/otherpage.html">Створити обліковий запис</a></p>
+    </div>
+</body>
+</html>
