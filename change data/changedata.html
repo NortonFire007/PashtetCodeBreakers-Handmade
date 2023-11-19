@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+	<meta class="meta" charset="UTF-8">
+	<meta class="meta" name="viewport" content="width=device-width, initial-scale=1.0">
+	<title class="title">mainpage</title>
+	<link class="link" rel="stylesheet" href="css/changedatastyle.css">
+
+</head>
+
+<body class="page">
+	<header class="header">
+		<div class="logo">
+			<a class="logo__link" href="mainpage.html">
+				<img class="logo__image" src="img/Header/logo.svg" alt=" PASHTET DOBRO">
+			</a>
+		</div>
+		<div class="search">
+			<input class="search__input" type="text" placeholder="Пошук по сайту">
+			<a><img class="search_item" src="img/Header/search.svg" alt=""></a>
+		</div>
+		<div class="icons">
+			<a class="icons__link" href="favorite.html">
+				<img class="icons__image" src="img/Header/Heart.svg" alt="Улюблене">
+			</a>
+			<a class="icons__link" href="profile.html">
+				<img class="icons__image" src="img/Header/People.svg" alt="Профіль">
+			</a>
+			<a id="loginout-button" title="Натисніть щоб увійти">
+			</a>
+		</div>
+	</header>
+	<form class="changedataform">
+		<div class="wrapper">
+				<img class="seller-image" src="img\1.jpg">
+				<input class="sellername" value="Валерія Тарасенко" disabled>
+				<img src="img\path copy.png" class="edit-name-pic">
+				<button class="edit-name" onclick="editName()">asas</button>
+				<script>
+					function editName() {
+					  const input = document.querySelector('.sellername');
+					  const button = document.querySelector('.edit-name');
+				  
+					  if (input.hasAttribute('disabled')) {
+						input.removeAttribute('disabled');
+					  } else {
+						input.setAttribute('disabled', 'true');
+						button.textContent = 'Редактировать имя';
+					  }
+					}
+				  </script>
+				<div>
+					<div class="circle"></div>
+					<img src="img\path.png" class="edit-pic">
+					<input type="file" class="file-input" accept="image/*">
+				</div>
+		</div>
+		<script>
+			document.querySelector('.file-input').addEventListener('change', function() {
+				changeProfileImage(this);
+			});
+		
+			function changeProfileImage(input) {
+				var imageElement = document.querySelector('.seller-image');
+				var file = input.files[0];
+		
+				if (file) {
+					var reader = new FileReader();
+					reader.onload = function(e) {
+						imageElement.src = e.target.result;
+						imageElement.alt = 'Нове фото Валерії Тарасенко';
+					};
+					reader.readAsDataURL(file);
+				}
+			}
+		</script>						
+		<div class="wrapper">
+			<h1 class="changecontacts">Змінити контактні дані</h1>
+		</div>
+		<div class="wrapper">
+			<input type="text" class="number" value="+380970462320"></input>
+			<input type="text" class="mail" value="yurachestnyh@gmail.com"></input>
+		</div>
+		<div class="wrapper">
+			<h1 class="sellerinfolabel">Опис</h1>
+		</div>
+		<div class="wrapper">
+			<textarea class="sellerinfo" placeholder="Опишіть свою діяльність"></textarea>
+		</div>
+		<div class="wrapper">
+			<h1 class="changepswrd">Змінити пароль</h1>
+		</div>
+		<div class="wrapper">
+			<input type="password" class="oldpswrd" placeholder="Старий пароль">
+		</div>
+		<div class="wrapper">	
+			<input type="password" class="newpswrd" placeholder="Новий пароль"></input>
+		</div>
+		<div class="wrapper">
+			<input type="password" class="submitnewpswrd" placeholder="Підтвердіть новий пароль"></input>
+		</div>
+		<div class="wrapper">
+			<a href="#" class="forget">Забув пароль</a>
+		</div>
+		<div class="wrapper">
+			<h1 class="categorieslabel">КатегоріЇ товарів</h1>
+		</div>
+		<div class="wrapper">
+			<input type="checkbox" class="categories">
+			<span class="category">Прикраси</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Одяг та аксесуари</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Вироби зі шкіри</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Кераміка</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Мистецтво</span>
+		</div>
+		<div class="wrapper">
+			<input type="checkbox" class="categories">
+			<span class="category">Вироби із текстилю</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Декор</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Іграшки</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Косметика</span>
+			<input type="checkbox" class="categories">
+			<span class="category">Подарунки</span>
+		</div>
+		<div class="wrapper">
+			<input type="submit" class="submit" value="Зберегти"></input>
+		</div>
+	</form>
+	<footer class="footer">
+		<div class="footer-content">
+			<div class="pashtet">
+				PASHTET
+			</div>
+			<div class="info">
+				ТМ використовується на підставі ліцензії правовласника Pashtet Code Breakers
+				© 2023 Благодійний маркет-плейс «PASHTET™»
+			</div>
+			<div class="social-links">
+				<a class="social-links__link" href="#">Facebook</a>
+				<a class="social-links__link" href="#">Twitter</a>
+				<a class="social-links__link" href="#">Instagram</a>
+			</div>
+		</div>
+	</footer>
+	<script class="script" src="js/login_logout_btn.js"></script>
+</body>
+</html>
