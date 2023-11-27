@@ -2,17 +2,17 @@ document.getElementById('productForm').addEventListener('submit', function(event
     const productName = document.getElementById('productName');
     const description = document.getElementById('description');
     const value = document.getElementById('value');
-    const productNameError = document.getElementById('productNameError');
     const differentNumField = document.getElementById('differentNumField');
-    const differentNumFieldError = document.getElementById('differentNumFieldError')
     const differentNum = document.getElementById("differentNum");
+    const charity = document.getElementById('charity');
+    const category = document.getElementById("category");
+    const fileInput = document.getElementById('fileInput');
+    const download__button = document.getElementById('download__button');
     if (productName.value.trim() === "" || description.value.trim() === "" || value.value.trim() === "" || differentNumField.value.trim() === "") {
         event.preventDefault(); // Предотвращаем отправку формы
         // название
         if (productName.value.trim() === "") {
             productName.style.border = "1px solid red";
-            productNameError.textContent = "Введіть коректну назву";
-            productNameError.style.display = "block";
             event.preventDefault();
         }
         else {
@@ -29,8 +29,6 @@ document.getElementById('productForm').addEventListener('submit', function(event
         // цена
         if (value.value.trim() === "") {
             value.style.border = "1px solid red";
-            valueError.textContent = "Введіть коректну ціну";
-            valueError.style.display = "block";
             event.preventDefault();
         }
         else {
@@ -40,30 +38,35 @@ document.getElementById('productForm').addEventListener('submit', function(event
         if(differentNum.checked){
             if (differentNumField.value.trim() === "") {
                 differentNumField.style.border = "1px solid red";
-                differentNumFieldError.textContent = "Введіть коректний номер телефону";
-                differentNumFieldError.style.display = "block";
                 event.preventDefault();
             }
         }
         else {
             differentNumField.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено
         }
-        productName.addEventListener('mouseover', function() {
-            if (productName.style.borderColor === 'red') {  
-                productNameError.textContent = '';
-            }
-        });
-        
-        value.addEventListener('mouseover', function() {
-            if (value.style.borderColor === 'red') {  
-                valueError.textContent = '';
-            }
-        });
-        
-        differentNumField.addEventListener('mouseover', function() {
-            if (differentNumField.style.borderColor === 'red') {  
-                differentNumFieldError.textContent = '';
-            }
-        });
-
+        // charity
+        if (charity.value.trim() === "") {
+            charity.style.border = "1px solid red";
+            event.preventDefault();
+        }
+        else {
+            charity.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено
+        }
+        // category
+        if (category.value === "option0") {
+            category.style.border = "1px solid red";
+            event.preventDefault();
+        }
+        else {
+            category.style.borderColor = ""; // Сбрасываем красную рамку, если поле заполнено
+        }
+         // Проверяем, выбран ли файл
+        if (fileInput.files.length === 0) {
+            // Если файл не выбран, добавляем красную рамку и отменяем отправку формы
+            download__button.style.border = "1px solid red";
+            event.preventDefault();
+        } else {
+            // Сбрасываем красную рамку, если файл выбран
+            download__button.style.border = "";
+        }
 }});

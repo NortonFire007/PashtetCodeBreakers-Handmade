@@ -167,13 +167,29 @@ select[id="category"] {
 }
 input[id="value"] {
     height: 50px;
-    width: 310px;
+    width: 150px;
     border: none;
     border-radius: 25px;
     padding: 0 0 0 25px;
     font-size: 25px;
     background-color: #D9D9D9;
     margin-left: 26px;
+}
+.charity{
+    height: 50px;
+    width: 100px;
+    border: none;
+    border-radius: 25px;
+    padding: 0 0 0 25px;
+    font-size: 25px;
+    background-color: #D9D9D9;
+    margin-left: 26px;
+}
+.labelForCharity{
+    font-size: 20px;
+    position: relative;
+    bottom: 110px;
+    left: 780px;
 }
 .text1 {
     font-size: 20px;
