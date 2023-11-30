@@ -7,24 +7,27 @@
     <title>Додати товар</title>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="img/logo.svg" alt="PASHTET DOBRO">
-            </a>
-        </div>
-        <div class="search">
-            <input type="text" placeholder="Поиск по сайту">
-        </div>
-        <div class="icons">
-            <a href="favorite.html">
-                <img src="img/Heart.png" alt="Избранное">
-            </a>
-            <a href="profile.html">
-                <img src="img/People.png" alt="Профиль">
-            </a>
-        </div>
-    </header>        
+    <header class="header">
+		<div class="logo">
+			<a class="logo__link" href="mainpage.html">
+				<img class="logo__image" src="img/Header/logo.svg" alt=" PASHTET DOBRO">
+			</a>
+		</div>
+		<div class="search">
+			<input class="search__input" type="text" placeholder="Пошук по сайту">
+			<a><img class="search_item" src="img/Header/search.svg" alt=""></a>
+		</div>
+		<div class="icons">
+			<a class="icons__link" href="favorite.html">
+				<img class="icons__image" src="img/Header/Heart.svg" alt="Улюблене">
+			</a>
+			<a class="icons__link" href="profile.html">
+				<img class="icons__image" src="img/Header/People.svg" alt="Профіль">
+			</a>
+			<a id="loginout-button" title="Натисніть щоб увійти">
+			</a>
+		</div>
+	</header>        
         <h2>Створення товару</h2>
         <form id="productForm" method="POST" action="/your-backend-endpoint">
         <div class="form-group">
@@ -38,6 +41,7 @@
             <label for="productName" id="labelForDescription">Опис товару</label>
         </div>
         <div class="img__wrapper">
+            <label for="fileInput" id="labelForPhoto">Фото</label>
             <div class="download__button">
                 <label id="download__button">
                 <input type="file" id="fileInput" onchange="download(this)">
@@ -62,9 +66,13 @@
               </select>
               <input type="text" id="value" name="value">
               <input type="text" class="charity" id="charity">
+              <select class="charityPercentage" id="charityPercentage">
+                <option value="5">5%</option>
+                <option value="10" selected>10%</option>
+                <option value="15">15%</option></select>
               <label for="category" id="labelForCategory">Категорія товару</label>
               <label for="value" id="labelForValue">Ціна</label>
-              <label for="charity" class="labelForCharity">Благодійність</label>
+              <label for="charity" class="labelForCharity">Благодійний внесок</label>
         </div>
         <div>
             <span class="span1">Телефон для зв'язку</span>
@@ -200,5 +208,6 @@
         <script src="JS/photoinput.js"></script>
         <script src="JS/charitycalculator.js"></script>
         <script src="JS/validation.js"></script>
+        <script src="js/photo_edit_button.js"></script>	
 </body>
 </html>
