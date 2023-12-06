@@ -1,0 +1,1190 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+    transition: filter 0.3s;
+
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Barlow', sans-serif;
+    font-size: inherit;
+    font-weight: 400;
+}
+
+
+a {
+    color: black;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #FF4F13;
+    transition: color 0.3s;
+}
+
+a:active {
+    color: black;
+}
+
+.allitems {
+
+    max-width: 1730px;
+    margin: 0 auto;
+
+}
+
+/*swiper*/
+
+
+.swiper {
+    max-width: 50%;
+    max-height: 50%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+
+    align-self: center;
+
+}
+
+.swiper-slide img {
+    display: inline-flex;
+    max-width: 100%;
+    /* Максимальная ширина изображения будет равна ширине родительского контейнера */
+    height: auto;
+    object-fit: cover;
+
+    align-items: center;
+
+
+}
+
+.favoritefor {
+    font-size: 24px;
+    color: white;
+    border: 3px solid white;
+    border-radius: 50%;
+    max-width: 47px;
+    max-height: 47px;
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    top: -20px;
+    left: 88%;
+    margin-bottom: 13px;
+}
+
+.favoritefor img {
+    margin: 10px 5px 5px 5px;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.favoritefor.clicked img {
+    filter: none;
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    height: 230px;
+}
+
+.footer-content {
+    padding: 60px 144px 60px 100px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.pashtet {
+    font-size: 50px;
+    font-family: Barlow, sans-serif;
+}
+
+.info {
+    width: 500px;
+    opacity: 0.6;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    position: relative;
+    top: -50px;
+    left: 700px;
+}
+
+#login-logout-button {
+    position: absolute;
+    background-color: #7800FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+    left: 92%;
+}
+
+#login-logout-button:hover {
+    background-color: #943cf9;
+}
+
+.flex_item {
+    display: flex;
+    width: 100%;
+}
+
+.swiper.mySwiper {
+    max-width: 40%;
+    height: 100%;
+
+    /* Половина ширины блока flex_item */
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+
+    --swiper-theme-color: #FF4F13;
+    /* background-color: #FF4F13;*/
+    /* Задаем значение переменной */
+}
+
+
+.description {
+    width: 75%;
+    /* Половина ширины блока flex_item */
+    height: 60%;
+    /* Половина высоты сверху */
+
+}
+
+.seller__description {
+    width: 75%;
+    /* Половина ширины блока flex_item */
+    height: 50%;
+    /* Половина высоты снизу */
+}
+
+.comments {
+    height: 372px;
+}
+
+.myr {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+
+.buy-button {
+    background-color: #7800FF;
+    color: #fff;
+    border: none;
+    padding: 5px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+
+
+    position: relative;
+}
+
+
+.buy-button:hover {
+    background-color: #9335ff;
+}
+
+.product__title {
+    font-weight: normal;
+    font-size: 23px;
+    margin-bottom: 13px;
+    max-width: 300px;
+}
+
+.all_stars {
+    display: flex;
+    margin-bottom: 35px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 25px;
+    margin-right: 8%;
+
+}
+
+.twoprice {
+    margin-right: 8%;
+    display: flex;
+    position: relative;
+}
+
+.allprices {
+    display: flex;
+    margin: 5% 0 0 0;
+}
+
+.opis {
+    font-size: 16px;
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.opis__all {
+    font-size: 16px;
+}
+
+
+.coment_sell {
+    background-color: #fff;
+    color: #7800FF;
+
+    border: 3px solid #7800FF;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+
+    position: relative;
+    left: 72%;
+    top: -10%;
+}
+
+
+.coment_sell:hover {
+    background-color: #a85cff;
+    border: 3px solid #a85cff;
+    color: #fff;
+}
+
+.custom-input {
+    width: 100%;
+    height: 70px;
+    border: 3px solid #ECECEC;
+    border-radius: 25px;
+    padding: 10px;
+    resize: none;
+}
+
+.all_stars_1 {
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.seller {
+    background-color: #ECECEC;
+    width: 100%;
+    height: 240px;
+    padding-top: 60px;
+    margin-right: 150px;
+
+}
+
+.location {
+    position: relative;
+    display: flex;
+    top: -156px;
+    left: 12%;
+    align-items: center;
+    max-width: 1300px;
+
+}
+
+.loc {
+    margin-left: 10px;
+}
+
+.hzchto {
+    position: relative;
+    top: -146px;
+    left: 12%;
+    max-width: 1300px;
+    font-size: 18px;
+}
+
+.name {
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    top: -226px;
+    left: 12%;
+    max-width: 1200px;
+}
+
+.cin {
+    margin-right: 15px;
+}
+
+.vverh {
+    margin: 0 5px 0 0;
+}
+
+.strelki {
+    margin-right: 15px;
+}
+
+.all_stars_1 {
+    position: absolute;
+    left: 20%;
+    top: 60%;
+}
+
+.tellefon {
+    background-color: #fff;
+    color: #7800FF;
+    border: 3px solid #7800FF;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+
+    position: absolute;
+    top: 15%;
+    left: 87%;
+}
+
+.tellefon:hover {
+    background-color: #a85cff;
+    border: 3px solid #a85cff;
+    color: #fff;
+}
+
+
+.social-buttons {
+    display: none;
+    position: absolute;
+
+    flex-direction: column;
+    top: 16%;
+    /* Измените положение, чтобы скроллбар был в нужном месте */
+    left: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 2px;
+    border-radius: 25px;
+    z-index: 2;
+}
+
+.social-button {
+    border-radius: 50%;
+    border: 3px solid #a85cff;
+    width: 54px;
+    height: 54px;
+}
+
+.social-button:hover {
+    background-color: #a85cff;
+    border: 3px solid #a85cff;
+    color: #fff;
+}
+
+
+.comments {
+    height: auto;
+    max-width: 100%;
+    margin: 0 1% 0 1%;
+
+}
+
+.com {
+    margin: 0 0 0 15%;
+}
+
+.anime1 {
+    position: relative;
+    height: 167px;
+    width: auto;
+    top: -24px;
+    border: 5px solid #ECECEC;
+    line-height: 100px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.comments-text {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.comments-items {
+    margin: 10px 0 0 10px;
+    position: relative;
+}
+
+.comments-item {
+    background-color: #D9D9D9;
+    padding: 10px;
+    border-radius: 25px;
+    margin: 0 0 15px 0;
+
+}
+
+.user-info {
+    position: relative;
+}
+
+.avatar {
+    position: relative;
+    top: 10px;
+}
+
+.username {
+    position: relative;
+    font-weight: bold;
+    font-size: 16px;
+    top: -24px;
+    left: 50px;
+}
+
+.date {
+    position: relative;
+    top: -20px;
+    left: 50px;
+}
+
+.comment-text {
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 16px;
+    margin-left: 50px;
+    position: relative;
+    top: -8px;
+    left: 0;
+
+}
+
+
+.show-more-btn {
+    background-color: #fff;
+    color: #7800FF;
+    border: 3px solid #7800FF;
+    padding: 7px 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    position: relative;
+    top: 18%;
+    left: 91%;
+    margin: 0 0 20px 0;
+}
+
+.show-more-btn:hover {
+    background-color: #a85cff;
+    border: 3px solid #a85cff;
+    color: #fff;
+}
+
+
+.rating__warning {
+    display: none;
+    color: red;
+    font-size: 14px;
+    font-weight: normal;
+    padding: 5px;
+    margin-top: 5px;
+    position: relative;
+    border: 1px solid red;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.rating__coment.warning .rating__warning {
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 170px;
+    max-width: 200px;
+}
+
+/*---------------------------*/
+
+.comentariy {
+    display: none;
+    width: 406px;
+    height: 370px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    z-index: 2;
+    background-color: #ffffff;
+    border: 3px solid #666;
+
+}
+
+
+.container {
+    position: relative;
+    width: 400px;
+    background: #e9e8e8;
+    padding: 20px 30px;
+
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container .post {
+    display: none;
+}
+
+.container .text {
+    font-size: 25px;
+    color: #666;
+    font-weight: 500;
+}
+
+.container .edit {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    font-size: 16px;
+    color: #666;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.container .edit:hover {
+    text-decoration: underline;
+}
+
+.container .star-widget input {
+    display: none;
+}
+
+.star-widget label {
+    font-size: 40px;
+    color: #a8a8a8;
+    padding: 10px;
+    float: right;
+    transition: all 0.2s ease;
+}
+
+input:not(:checked) ~ label:hover,
+input:not(:checked) ~ label:hover ~ label {
+    color: #fd4;
+}
+
+input:checked ~ label {
+    color: #fd4;
+}
+
+input#rate-5:checked ~ label {
+    color: #fe7;
+    text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header:before {
+    content: "Я просто ненавиджу це ";
+}
+
+#rate-2:checked ~ form header:before {
+    content: "Мені це не подобається ";
+}
+
+#rate-3:checked ~ form header:before {
+    content: "Це приголомшливо";
+}
+
+#rate-4:checked ~ form header:before {
+    content: "Мені просто подобається ";
+}
+
+#rate-5:checked ~ form header:before {
+    content: "Я просто люблю це ";
+}
+
+.container form {
+    display: none;
+}
+
+input:checked ~ form {
+    display: block;
+}
+
+.header_coment {
+    width: 100%;
+    font-size: 25px;
+    color: #ff6000;
+    background-color: #e3e3e3;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    border: 2px solid #777;
+    padding-left: 15%;
+    text-align: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    border-radius: 25px;
+}
+
+form .textarea {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #000000;
+    border: 2px solid #777;
+    background: #e3e3e3;
+    border-radius: 25px;
+    padding: 10px;
+    font-size: 17px;
+    resize: none;
+}
+
+.textarea textarea:focus {
+    border-color: #777;
+}
+
+form .btn {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn button {
+    height: 100%;
+    width: 100%;
+    border: 2px solid #777;
+    outline: none;
+    background: #e3e3e3;
+    border-radius: 25px;
+    color: #999;
+    font-size: 17px;
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form .btn button:hover {
+    background: #1b1b1b;
+}
+
+.closeapp {
+    position: absolute;
+    cursor: pointer;
+    top: 10%;
+    left: 3%;
+    border-radius: 50%;
+}
+
+.cindate {
+    display: flex;
+    margin: 0 0 0 12%;
+    font-size: 20px;
+    position: relative;
+    top: 40px;
+}
+
+.recommendations {
+    margin-left: 7%;
+    margin-bottom: -30px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-top: 25px;
+}
+
+.strelki {
+    display: flex;
+}
+
+.wrapper {
+
+    /* ширина родительского контейнера */
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5%;
+    padding-left: 1.5%;
+    margin-bottom: 5%;
+    margin-left: 8%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.wrapperrec {
+
+    /* ширина родительского контейнера */
+    width: 90%;
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5%;
+    padding-left: 1.5%;
+    margin-bottom: 5%;
+    margin-left: 8%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.block__content {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+
+.button__viewmore {
+    color: #7800FF;
+    background-color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    z-index: 2;
+    border: 1px solid #7800FF;
+    position: relative;
+    top: -20px;
+
+}
+
+.button__viewmore:hover {
+    background-color: #9335ff;
+    color: #fff;
+}
+
+.button_viewmore {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 50px 0;
+}
+
+.wrap__coments_area {
+    background-color: #ECECEC;
+    color: #000;
+    max-width: 950px;
+    min-width: 950px;
+    max-height: 180px;
+    min-height: 180px;
+    border-radius: 25px;
+    padding: 15px;
+
+}
+
+.wrap__coments {
+
+    max-width: 1430px;
+    margin: 0 0 0 14%;
+
+
+}
+
+.wrap_flex {
+    display: flex;
+}
+
+.left__ratting {
+    background-color: #fff;
+    max-width: 600px;
+    min-width: 400px;
+
+    max-height: 180px;
+    min-height: 180px;
+    border-radius: 25px;
+    margin-left: 110px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.wrap__coments_com {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.text__text {
+    font-size: 16px;
+    margin-left: 14px;
+}
+
+.send-button {
+    background-color: #7800FF;
+    color: #fff;
+    border: none;
+    padding: 5px 32px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+
+}
+
+.send-button:hover {
+    background-color: #9335ff;
+    color: #fff;
+}
+
+
+.rating__product,
+.rating__seller,
+.rating__sell,
+.rating__coment,
+.rating__coment_under {
+    display: flex;
+    align-items: flex-end;
+    font-size: 40px;
+    line-height: 0.75;
+    color: #575757;
+    margin-left: 50px;
+}
+
+
+.rating__seller {
+    margin-left: 85px;
+}
+
+.rating__sell {
+    position: relative;
+    top: -154px;
+    left: 140px;
+    max-width: 800px;
+}
+
+
+.rating__coment {
+    margin-left: 65px;
+}
+
+.rating__body {
+    position: relative;
+}
+
+
+.rating__body::before {
+    content: "★★★★★";
+    display: block;
+}
+
+.rating__seller .rating__body::before {
+    font-size: 30px;
+
+}
+
+.rating__seller .rating__active::before {
+    font-size: 30px;
+
+}
+
+.rating__sell .rating__body::before {
+    font-size: 30px;
+
+}
+
+.rating__sell .rating__active::before {
+    font-size: 30px;
+
+}
+
+.rating__product .rating__body::before {
+    font-size: 30px;
+
+}
+
+.rating__product .rating__active::before {
+    font-size: 30px;
+
+}
+
+
+.rating__coment .rating__body::before {
+    font-size: 30px;
+
+}
+
+.rating__coment .rating__active::before {
+    font-size: 30px;
+
+}
+
+.rating__active {
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+
+.rating__active::before {
+    content: "★★★★★";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #ffae19;
+
+}
+
+.rating__items {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.rating__item,
+.rating__item_prod {
+    flex: 0 0 20%;
+    height: 100%;
+    opacity: 0;
+}
+
+.rating__value {
+    font-size: 20px;
+    line-height: 1;
+    padding: 0 0 0 10px;
+    color: #000;
+}
+
+.yakist,
+.termin,
+.actyal {
+    display: flex;
+    align-items: center;
+}
+
+.comments-container {
+    margin: 3% 11% 0 14%;
+}
+
+.rating__coment_under .rating__body::before {
+    font-size: 20px;
+
+}
+
+.rating__coment_under .rating__active::before {
+    font-size: 20px;
+
+}
+
+.rating__coment_under {
+    position: relative;
+    top: -40px;
+    left: 5%;
+
+}
+
+.informaz {
+    background-color: #D9D9D9;
+    height: 277px;
+    width: 100%;
+    padding: 40px 0px 70px 410px;
+}
+
+.informaz__first,
+.informaz__third_sposib-name,
+.informaz__third_contacts-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.informaz__first {
+    margin-bottom: 15px;
+}
+
+.informaz__third_sposib-nova,
+.informaz__third_sposib-ukr,
+.informaz__third_sposib-samov {
+    margin: 0 15px 0 0;
+}
+
+.informaz__third_sposib-name,
+.informaz__third_contacts-name {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+
+.informaz__second {
+    font-size: 20px;
+    margin-bottom: 16px;
+}
+
+.informaz__third_sposib-buttons {
+    font-size: 18px;
+}
+
+.informaz__third_contacts {
+    font-size: 18px;
+}
+
+.social-buttons-com {
+
+
+    width: 210px;
+
+
+    padding: 2px;
+    border-radius: 25px;
+    z-index: 2;
+}
+
+.social-button-com {
+
+    color: #7800FF;
+
+
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 5px;
+}
+
+.informaz__second {
+    max-width: 960px;
+}
+
+.informaz__third_contacts {
+    display: flex;
+    align-items: center;
+}
+
+.informaz__third_contacts-name {
+    position: relative;
+    top: -30px;
+    left: 20%;
+}
+
+.informaz__third_sposib-buttons {
+    display: flex;
+}
+
+.informaz__third {
+    display: flex;
+
+}
+
+.informaz__third_contacts {
+    position: relative;
+    top: 20px;
+    left: 33%;
+}
+
+.informaz__third_contacts-copy {
+    cursor: pointer;
+}
+
+.favorite {
+    display: none;
+}
+
+.block__element:hover .favorite {
+    display: block;
+}
+
+.block__elements:hover .favorite {
+    display: block;
+}
+
+.no__product_text-comm {
+    min-width: 176px;
+    margin-left: -40px;
+}

@@ -1,0 +1,288 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Arimo', sans-serif;
+}
+
+:focus,
+:active {
+    outline: none;
+}
+
+a:focus,
+a:active {
+    outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+    display: block;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 14px;
+    -ms-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    position: relative;
+}
+
+input,
+button,
+textarea {
+    font-family: inherit;
+}
+
+input::-ms-clear {
+    display: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+button::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*h5,*/
+/*h6 {*/
+/*    font-family: 'Barlow', sans-serif;*/
+/*    font-size: inherit;*/
+/*    font-weight: 400;*/
+/*}*/
+
+
+a {
+    color: black;
+    transition: color 0.3s;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #FF4F13;
+    transition: color 0.3s;
+}
+
+a:active {
+    color: black;
+}
+
+
+.block__row {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 20px 0;
+    height: 230px;
+}
+
+.footer-content {
+    padding: 60px 144px 60px 100px;
+}
+
+.social-links {
+    margin-top: 10px;
+}
+
+.pashtet {
+    font-size: 50px;
+    font-family: Barlow, sans-serif;
+}
+
+.info {
+    width: 500px;
+    opacity: 0.6;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+    position: relative;
+    top: -50px;
+    left: 700px;
+}
+
+#login-logout-button {
+    position: absolute;
+    background-color: #7800FF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 5px;
+    left: 92%;
+}
+
+#login-logout-button:hover {
+    background-color: #943cf9;
+}
+
+.wrapper {
+
+    /* ширина родительского контейнера */
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5%;
+    padding-left: 1.5%;
+    margin-bottom: 5%;
+    margin-left: 11%;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.block__content {
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.categories__img {
+    /*background-image: url('http://127.0.0.1:8000/static/img/bijouterie.jpg');*/
+    background-repeat: repeat-x;
+    width: 100%;
+    height: 198px;
+}
+
+.all__text {
+    display: flex;
+    justify-content: center;
+}
+
+.name__categories {
+    background-color: white;
+    border-radius: 25px;
+    border: 8px solid #FF4F13;
+    font-size: 30px;
+    font-weight: bold;
+    height: 73px;
+    min-width: 256px;
+    padding: 12px 27px 12px 27px;
+    text-align: center;
+    margin-top: 3%;
+}
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.pagination button {
+    color: black;
+    float: left;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px 10px 15px;
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.pagination button.active {
+    background-color: #c28dff;
+    color: #000;
+
+    border: 2px solid #9335ff;
+    border-radius: 50%;
+
+}
+
+.pagination button::after {
+    background-color: #c28dff;
+    color: #000;
+    border: 2px solid #9335ff;
+    border-radius: 50%;
+
+}
+
+.pagination button:hover:not(.active):not(:first-child):not(:last-child) {
+    background-color: #fff;
+    border: 2px solid #9335ff;
+
+    border-radius: 50%;
+}
+
+.sort {
+    margin-top: 32px;
+    background-color: #D9D9D9;
+    color: #000;
+    border: none;
+    border-radius: 25px;
+    height: 30px;
+    width: 250px;
+    font-size: 20px;
+    position: relative;
+    float: right;
+    right: 30px;
+    margin-bottom: -50px;
+}
+
+.no__product {
+    margin: 0 47% 0 39%;
+    max-width: 100%;
+    display: block;
+    height: 400px;
+    padding: 120px 0 0 0;
+}
+
+.no__product_text {
+    margin-top: 10px;
+    margin-left: 140px;
+    min-width: 186px;
+}
+
+.no__product_img {
+    max-width: 80px;
+    opacity: 0.5;
+    margin-left: 177px;
+}
+
+.h2 {
+    font-family: Arimo, sans-serif;
+}
+
+.wrapper-fav {
+    max-width: 1380px;
+}
