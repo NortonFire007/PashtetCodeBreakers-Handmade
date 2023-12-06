@@ -1,0 +1,78 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Реєстрація</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,700;1,400;1,700&family=Barlow:wght@300;400;700&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styleforlogin.css' %}">
+    <script src="{% static 'js/register_script.js' %}"></script>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <a href="http://127.0.0.1:8000">
+            <img src="{% static 'img/Pastet.png' %}" alt="PASHTET DOBRO">
+        </a>
+    </div>
+</header>
+
+<div class="wrapper">
+    <div class="reestr">
+        Реєстрація
+    </div>
+    <div class="pole">
+        <form class="forma" id="registration-form">
+            <div>
+                <p class="email">Введіть свою пошту</p>
+                <input tabindex="1" name="email" type="text" class="pole3" id="email">
+                <div class="errortext"><span id="emailError" class="error"></span></div>
+            </div>
+            <div>
+                <p class="password">Введіть пароль</p>
+                <input tabindex="2" name="password" type="password" class="pole4" id="password">
+                <div class="errortext"><span id="passwordError" class="error"></span></div>
+            </div>
+            <div>
+                <p class="password2">Підтвердіть пароль</p>
+                <input tabindex="3" name="confirmPassword" type="password" class="pole5" id="confirmPassword">
+                <div class="errortext"><span id="confirmPasswordError" class="error"></span></div>
+            </div>
+            <div class="forma" class="pole">
+                <div>
+                    <p class="email">Введіть своє ім'я</p>
+                    <input tabindex="4" name="first_name" type="text" class="pole13" id="first_name">
+                </div>
+                <div>
+                    <p class="password">Введіть прізвище</p>
+                    <input tabindex="5" name="last_name" type="text" class="pole14" id="last_name">
+
+                </div>
+                <div>
+                    <p class="number">Номер телефона</p>
+                    <input tabindex="6" name="phone_number" type="tel" class="pole12" id="phone_number">
+                </div>
+                <div>
+                    <p class="password2">Введіть місто</p>
+                    <input tabindex="7" name="city" type="text" class="pole15" id="city">
+                </div>
+            </div>
+            <p id="generalError"></p>
+            <button tabindex="8" type="submit" class="button">
+                Зареєструватися
+            </button>
+        </form>
+    </div>
+
+    </form>
+</div>
+</div>
+
+<script src="{% static 'js/validation.js' %}"></script>
+</body>
+</html>
+

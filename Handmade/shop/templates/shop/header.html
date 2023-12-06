@@ -1,0 +1,28 @@
+{% load static %}
+<header class="header">
+    <div class="logo">
+        <a class="logo__link" href="http://127.0.0.1:8000/">
+            <img class="logo__image" src="{% static 'img/logo.svg' %}" alt="PASHTET DOBRO">
+        </a>
+    </div>
+    <div class="search">
+        <input class="search__input" id="searchInput" type="text" placeholder="Пошук по сайту">
+        <button class="search_item" id="searchButton">
+            <img class="icons__image" src="{% static 'img/search.svg' %}" alt="Профіль">
+        </button>
+    </div>
+    <div class="icons">
+        <a class="icons__link" id="heart-btn" href="http://127.0.0.1:8000/favorite">
+            <img class="icons__image" src="{% static 'img/Heart.svg' %}" alt="Улюблене">
+        </a>
+        <button class="icons__link" id="profileButton">
+            <img class="icons__image" src="{% static 'img/People.svg' %}" alt="Профіль">
+        </button>
+        <a class="icons__link" id="add-prod-btn" href="http://127.0.0.1:8000/add_product">
+            <img class="icons__image" src="{% static 'img/addProduct.svg' %}" alt="Додати товар">
+        </a>
+        <a class="icons__link" id="loginout-button" title="Натисніть щоб увійти">
+            <img src="{% static 'img/log-in.svg' %}" alt="Увійти">
+        </a>
+    </div>
+</header>
